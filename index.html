@@ -1,28 +1,230 @@
 <!DOCTYPE html>
+<html lang="en-us">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Charset, IE mode, Viewport -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover">
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- PWA iOS caps -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover" />
+  <!-- Canonical and Robots -->
+  <link rel="canonical" href="https://sites.google.com/view/staticquasar931/gm3z/the-impossible-quiz">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <link rel="icon" href="assets/shared/ico.png" type="image/png">
+  <!-- Title -->
+  <title>The Impossible Quiz Unblocked - StaticQuasar931 Flash Puzzle game</title>
 
-    <meta name="description" content="">
+  <!-- Favicons -->
+  <link rel="icon" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761092315/The_Impossible_Quiz_Favicon_StaticQuasar931_fklcia.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761092315/The_Impossible_Quiz_Favicon_StaticQuasar931_fklcia.png">
 
-	<title>Impossible Quiz</title>
+  <!-- Primary SEO -->
+  <meta name="description" content="Play The Impossible Quiz unblocked with fast loading and fullscreen support. Classic tricky questions, humor, and logic. Works on Chromebook, PC, and mobile. Free, school safe, and hosted by StaticQuasar931.">
+  <meta name="keywords" content="The Impossible Quiz, The Impossible Quiz unblocked, impossible quiz online, impossible quiz answers, flash puzzle quiz, brain teaser browser game, school safe games, Chromebook games, play at school, StaticQuasar931, static 931, staticq, staticq931, staticquasar931, 931 games, unbl0cked game, unbl0cked g@me">
+  <meta name="theme-color" content="#000000">
+  <meta name="referrer" content="no-referrer-when-downgrade">
 
-    <link rel="stylesheet" href="index.css">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="The Impossible Quiz - Unblocked by StaticQuasar931">
+  <meta property="og:description" content="Think different. The classic flash puzzle with trick questions. Free, fullscreen, and school safe.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sites.google.com/view/staticquasar931/gm3z/the-impossible-quiz">
+  <meta property="og:image" content="https://res.cloudinary.com/dlq5fztla/image/upload/v1761090959/flash_365143_card_a5fbku.png">
+  <meta property="og:image:alt" content="The Impossible Quiz thumbnail from StaticQuasar931">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dlq5fztla/image/upload/v1761090959/flash_365143_card_a5fbku.png">
+  <meta name="twitter:image:alt" content="The Impossible Quiz thumbnail from StaticQuasar931">
 
-    <script src="poki-sdk.js"></script>
+  <!-- Preload images used in metadata and UI -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761092315/The_Impossible_Quiz_Favicon_StaticQuasar931_fklcia.png">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761090959/flash_365143_card_a5fbku.png">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1747533158/raw_cw34yi.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Poki SDK and game -->
+  <script src="poki-sdk.js"></script>
+
+  <style>
+    :root{
+      --brand:#5ee1ff;
+      --brand2:#9bffb7;
+      --shadow:0 10px 30px rgba(0,0,0,.4);
+      --glow:0 0 12px rgba(94,225,255,.65), 0 0 32px rgba(155,255,183,.35);
+    }
+    html, body{
+      margin:0;
+      height:100%;
+      background:#000;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow:hidden;
+    }
+    /* Game host fills viewport. Your js/index.js should size or inject the canvas inside #game-root */
+    #game-root{
+      position:fixed;
+      inset:0;
+      background:#000;
+    }
+
+    /* Static Menu top-left */
+    #staticMenu{
+      position:fixed; top:12px; left:12px; z-index:9999;
+      background:linear-gradient(135deg, rgba(20,20,28,.9), rgba(20,20,28,.6));
+      color:#e8f3ff; padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(94,225,255,.35);
+      box-shadow:var(--glow), var(--shadow);
+      font-size:14px; user-select:none; display:flex; gap:10px; align-items:center;
+      animation:menuEnter .6s ease .15s both;
+    }
+    @keyframes menuEnter{from{opacity:0; transform:translateY(-8px)} to{opacity:1; transform:translateY(0)}}
+    #staticMenu a{ color:#5ee1ff; font-weight:800; text-decoration:none }
+    #closeStaticMenu{ color:#f55; cursor:pointer; padding:2px 6px; border-radius:6px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.06) }
+
+    /* Rotating icon bottom-right: Google Form <-> Instagram */
+    #staticSlideMenu{
+      position:fixed; bottom:24px; right:24px; z-index:9999;
+      width:100px; height:100px; pointer-events:none; opacity:0;
+      transform:translateX(140px) scale(.96);
+    }
+    #staticSlideMenu a{ display:block; width:100%; height:100% }
+    #staticSlideMenu img{ width:100%; height:100%; object-fit:cover; border-radius:50% }
+
+    .slide-in{ animation:slideIn 2s ease forwards }
+    .slide-out{ animation:slideOut 2s ease forwards }
+    @keyframes slideIn{ from{opacity:0; transform:translateX(140px) scale(.96)} to{opacity:1; transform:translateX(0) scale(1)} }
+    @keyframes slideOut{ from{opacity:1; transform:translateX(0) scale(1)} to{opacity:0; transform:translateX(140px) scale(.96)} }
+
+    /* Hidden SEO for crawlers */
+    .seo-hidden{
+      position:absolute; width:1px; height:1px; overflow:hidden;
+      clip:rect(1px,1px,1px,1px); white-space:nowrap;
+    }
+
+    @media (max-width:600px){
+      #staticMenu{ font-size:13px; padding:8px 12px }
+      #staticSlideMenu{ width:88px; height:88px }
+    }
+  </style>
 </head>
 
-<body style="margin:0; background-color:white">
+<body>
+  <!-- Static Menu -->
+  <div id="staticMenu" role="region" aria-label="StaticQuasar menu">
+    <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">More Unblocked Games by Static</a>
+    <span id="closeStaticMenu" title="Hide temporarily">✕</span>
+  </div>
 
+  <!-- Bottom-right rotating icon -->
+  <div id="staticSlideMenu" aria-live="polite">
+    <a id="staticSlideLink" href="https://sites.google.com/view/staticquasar931/google-form" target="_blank" rel="noopener" aria-label="Open Google Form">
+      <img id="staticSlideImg" src="https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png" alt="StaticQuasar931 Google Form for feedback and requests">
+    </a>
+  </div>
+
+  <!-- Game root. Your js/index.js should render the game here -->
+  <div id="game-root"></div>
+
+  <!-- Hidden SEO block -->
+  <div class="seo-hidden" aria-hidden="true">
+    <h1>The Impossible Quiz unblocked - classic flash puzzle game</h1>
+    <p><strong>The Impossible Quiz</strong> is a famous trick question puzzle that rewards creative thinking, pattern recognition, and a sense of humor. This page by <strong>StaticQuasar931</strong> hosts a modern build that loads fast and runs in fullscreen without extra plugins. It is designed to work at school and work on Chromebook, Windows, macOS, and mobile browsers.</p>
+    <p>You will face rapid fire questions with answers that break expectations. Many levels use wordplay, visual cues, timed inputs, and item usage. Failing is part of the learning loop. Each run teaches you which choices work so you can push farther on the next attempt. The charm comes from surprises and jokes, so read closely, try unexpected options, and keep calm during the speed segments.</p>
+    <ul>
+      <li>Chromebook friendly with fullscreen scaling and input support</li>
+      <li>School safe setup with no extra downloads</li>
+      <li>Fast startup and smooth play</li>
+      <li>Classic content preserved for modern browsers</li>
+    </ul>
+    <p>Keywords: The Impossible Quiz unblocked, impossible quiz online, impossible quiz answers list, flash puzzle browser game, brain teaser quiz, school safe games, Chromebook games, play at school, StaticQuasar931, static 931, staticquasar931, staticq, staticq931, 931 games, unbl0cked game, unbl0cked g@me.</p>
+    <p>Find more unblocked games: <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">https://sites.google.com/view/staticquasar931/gm3z</a></p>
+  </div>
+
+  <!-- Your existing game loader -->
+  <script src="js/index.js"></script>
+
+  <script>
+    // Leave warning
+    window.onbeforeunload = () => "Leave this page? Your progress may not be saved.";
+
+    // Static Menu hide + auto-restore in 3 minutes
+    (function(){
+      const menu = document.getElementById("staticMenu");
+      const btn  = document.getElementById("closeStaticMenu");
+      const KEY  = "sq931_staticMenu_hidden_until";
+      const restore = () => { menu.style.display = "flex"; };
+      const maybeHide = () => {
+        const until = parseInt(localStorage.getItem(KEY)||"0",10);
+        const now = Date.now();
+        if (until && now < until){
+          menu.style.display = "none";
+          setTimeout(restore, until - now);
+        }
+      };
+      if (btn){
+        btn.onclick = () => {
+          menu.style.display = "none";
+          const until = Date.now() + 180000;
+          localStorage.setItem(KEY, String(until));
+          setTimeout(restore, 180000);
+        };
+      }
+      maybeHide();
+    })();
+
+    // Rotator: Google Form <-> Instagram
+    (function(){
+      const wrap = document.getElementById("staticSlideMenu");
+      const a    = document.getElementById("staticSlideLink");
+      const img  = document.getElementById("staticSlideImg");
+
+      const FORM = {
+        src: "https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png",
+        alt: "StaticQuasar931 Google Form for feedback and requests",
+        link:"https://sites.google.com/view/staticquasar931/google-form"
+      };
+      const INSTA = {
+        src: "https://res.cloudinary.com/dcsrqennd/image/upload/v1747533158/raw_cw34yi.png",
+        alt: "StaticQuasar931 Instagram",
+        link:"https://www.instagram.com/freeschoolgamepage/"
+      };
+      const ROTATION = [FORM, INSTA];
+
+      const T_IN = 2000, T_SHOW = 5000, T_OUT = 2000, T_HIDDEN = 20000;
+
+      ROTATION.forEach(o => { const p=new Image(); p.src=o.src; });
+
+      let idx = 0;
+      function apply(state){
+        img.src = state.src; img.alt = state.alt; a.href = state.link;
+      }
+
+      async function cycle(){
+        for(;;){
+          apply(ROTATION[idx]);
+          wrap.style.pointerEvents = "auto";
+          wrap.classList.remove("slide-out");
+          wrap.classList.add("slide-in");
+          await new Promise(r=>setTimeout(r, T_IN + T_SHOW));
+          wrap.classList.remove("slide-in");
+          wrap.classList.add("slide-out");
+          await new Promise(r=>setTimeout(r, T_OUT));
+          wrap.style.pointerEvents = "none";
+          await new Promise(r=>setTimeout(r, T_HIDDEN));
+          idx = (idx + 1) % ROTATION.length;
+        }
+      }
+
+      cycle();
+    })();
+
+    // Basic safety guard if js/index.js expects a container by id
+    // Ensure there is a global mount point available
+    window.__IMPOSSIBLE_QUIZ_ROOT__ = document.getElementById("game-root");
+  </script>
 </body>
-
-<script src="js/index.js"></script>
-
 </html>
